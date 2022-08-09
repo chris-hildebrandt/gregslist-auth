@@ -6,7 +6,7 @@ export class House {
     this.bathrooms = data.bathrooms || 0
     this.year = data.year
     this.price = data.price || 0
-    this.imgUrl = data.imgUrl || ''
+    this.img = data.img || ''
     this.description = data.description || ''
   }
 
@@ -15,7 +15,7 @@ export class House {
     return `
     <div class="col-4 p-3">
       <div class="bg-white elevation-2">
-        <img class="img-fluid" src="${this.imgUrl}" alt="">
+        <img class="img-fluid" src="${this.img}" alt="">
         <div class="p-2">
           <h4 class="text-center">Beds:${this.bedrooms} | Baths:${this.bathrooms} |Built: ${this.year}</h4>
           <p>${this.description}</p>

@@ -24,12 +24,13 @@ class HousesService {
   async editHouse(houseId, body) {
     let house = await this.getHouseById(houseId)
 
-    // car.make = body.make || car.make
-    // car.model = body.model || car.model
-    // car.price = body.price || car.price
-    // car.year = body.year || car.year
-    // car.img = body.img || car.img
-    // car.description = body.description || car.description
+    this.id = data.id
+    this.bedrooms = data.bedrooms || 0
+    this.bathrooms = data.bathrooms || 0
+    this.year = data.year
+    this.price = data.price || 0
+    this.img = data.img || ''
+    this.description = data.description || ''
 
     await house.save()
     return house

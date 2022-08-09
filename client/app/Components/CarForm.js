@@ -25,8 +25,8 @@ export function getCarForm(car = new Car({})){
             </div>
             <label class="form-label" for="price">Price</label>
             <input class="form-control" type="number" min="500" id="price" name="price" value="${car.price}">
-            <label class="form-label" for="imgUrl">Image</label>
-            <input class="form-control" type="text" id="imgUrl" name="imgUrl" value="${car.imgUrl}">
+            <label class="form-label" for="img">Image</label>
+            <input class="form-control" type="text" id="img" name="img" value="${car.img}">
             <label class="form-label" for="description">Description</label>
             <textarea class="w-100 form-control" name="description" id="description" rows="5" value="${car.description}"></textarea>
             <button type="submit" class="btn btn-primary w-100 p-2 mt-3 text-light">Submit</button>

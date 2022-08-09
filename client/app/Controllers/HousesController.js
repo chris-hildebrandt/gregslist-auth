@@ -40,11 +40,17 @@ export class HousesController {
       // @ts-ignore
       let form = window.event.target
       let newHouse = {
+        // @ts-ignore
         bedrooms: form.bedrooms.value,
+        // @ts-ignore
         bathrooms: form.bathrooms.value,
+        // @ts-ignore
         year: form.year.value,
+        // @ts-ignore
         price: form.price.value,
-        imgUrl: form.imgUrl.value,
+        // @ts-ignore
+        img: form.img.value,
+        // @ts-ignore
         description: form.description.value,
       }
       await housesService.createHouse()

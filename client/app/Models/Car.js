@@ -7,7 +7,7 @@ export class Car{
     this.year = data.year || 0
     // you can sort of enforce this by setting min values on the form
     this.price = data.price || 500 
-    this.imgUrl = data.imgUrl || ''
+    this.img = data.img || ''
     this.description = data.description || ''
     this.color = data.color || '#65f9a0'
   }
@@ -16,7 +16,7 @@ export class Car{
     return `
     <div class="col-4 p-3">
       <div class="bg-white elevation-2">
-        <img class="img-fluid" src="${this.imgUrl}" alt="">
+        <img class="img-fluid" src="${this.img}" alt="">
         <div class="p-2">
           <h4 class="text-center">${this.make} | ${this.model} | ${this.year}</h4>
           <p>${this.description}</p>

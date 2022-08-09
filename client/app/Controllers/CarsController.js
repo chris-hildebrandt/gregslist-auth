@@ -46,7 +46,7 @@ export class CarsController {
           // @ts-ignore
           price: form.price.value,
           // @ts-ignore
-          imgUrl: form.imgUrl.value,
+          img: form.img.value,
           // @ts-ignore
           description: form.description.value,
         }
@@ -110,7 +110,7 @@ export class CarsController {
         // @ts-ignore
         price: form.price.value,
         // @ts-ignore
-        imgUrl: form.imgUrl.value,
+        img: form.img.value,
         // @ts-ignore
         description: form.description.value,
       }
