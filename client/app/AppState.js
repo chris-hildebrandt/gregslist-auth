@@ -5,8 +5,12 @@ import { isValidProp } from './Utils/isValidProp.js'
 class AppState extends EventEmitter {
   user = {}
   account = {}
-  /** @type {import('./Models/Value').Value[]} */
-  values = []
+  /** @type {import('./Models/Car').Car[]} */
+  cars = []
+  /** @type {import('./Models/House').House[]} */
+  houses = []
+  /** @type {import('./Models/Job').Job[]} */
+  jobs = []
   socketData = []
 }
 

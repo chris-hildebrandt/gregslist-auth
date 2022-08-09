@@ -79,3 +79,5 @@ export class Startup {
     })
   }
 }
+
+// move over Controllers, services, and models, rewrite appstate and main, copy over index, but ids might be broken. rewrite new ids check urls in axios and in service. when hooking up the controllers in the main, make sure you are linking the client one, not the server one. Pop and carform need to be moved as well

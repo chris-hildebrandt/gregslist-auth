@@ -9,6 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/style/main.css">
+  <link rel="stylesheet" href="assets/style/style.css">
   <title>gregslist-auth</title>
 </head>
 
@@ -31,33 +32,101 @@
       </div>
       <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
     </nav>
+    <button class="btn btn-primary" onclick="app.carsController.viewCars()">cars</button>
+    <button class="btn btn-primary" onclick="app.housesController.viewHouses()">houses</button>
+    <button class="btn btn-primary" onclick="app.jobsController.viewJobs()">Jobs</button>
   </header>
-  <main id="app">
+  <main>
     <div class="container-fluid">
-      <div class="row my-3">
-        <div class="col-lg-5" id="auth-settings">
-          <div class="card p-2 skeleton-loader">
-            <div class="card-title p-2">
-              <div class="d-flex align-items-center">
-                <div class="skeleton-loader avatar"></div>
-                <div class="skeleton-loader text mx-2"></div>
-              </div>
-            </div>
-            <div class="card-body border-top">
-              <div class="skeleton-loader text block"></div>
-              <div class="skeleton-loader text block"></div>
-              <div class="skeleton-loader text block"></div>
+      <!-- SECTION listings -->
+      <section id="listings" class="row">
+        <!-- STUB car template -->
+        <!-- <div class="col-4 p-3">
+          <div class="bg-white elevation-2">
+            <img class="img-fluid" src="https://thiscatdoesnotexist.com" alt="">
+            <div class="p-2">
+              <h4 class="text-center">Make | Model | Year</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus corrupti possimus neque quas,
+                dignissimos itaque at aspernatur.</p>
+              <p class="text-end text-success m-0">$<b>100</b></p>
             </div>
           </div>
-        </div>
-      </div>
+        </div> -->
+        <!-- ---- -->
+      </section>
+      <!-- SECTION form -->
+      
+      <section id="form" class="row justify-content-center p-3">
+
+      </section>
+      <!-- STUB House Form -->
+      <section id="house-form" class="row justify-content-center p-3 d-none">
+        <form class="col-10 bg-white p-3 elevation-2" onsubmit="app.housesController.createHouse()">
+          <h3 class="text-primary">List Your House</h3>
+          <div class="row p-3">
+            <div class="col-4">
+              <label class="form-label" for="state">State</label>
+              <input class="form-control" type="text" minlength="2" maxlength="2" id="state" name="state">
+            </div>
+            <div class="col-4">
+              <label class="form-label" for="city">City</label>
+              <input class="form-control" type="text" id="city" name="city">
+            </div>
+            <div class="col-4">
+              <label class="form-label" for="year">Year</label>
+              <input class="form-control" type="number" id="year" name="year">
+            </div>
+            <label class="form-label" for="price">Price</label>
+            <input class="form-control" type="number" min="1" id="price" name="price">
+            <label class="form-label" for="img">Image</label>
+            <input class="form-control" type="text" id="img" name="img">
+            <label class="form-label" for="description">Description</label>
+            <textarea class="w-100 form-control" name="description" id="description" rows="5"></textarea>
+            <button type="submit" class="btn btn-primary w-100 p-2 mt-3 text-light">Submit</button>
+          </div>
+        </form>
+      </section>
+      </section>
+      <!-- STUB JOB FORM -->
+      <section id="job-form" class="row justify-content-center p-3 d-none">
+        <form class="col-10 bg-white p-3 elevation-2" onsubmit="app.jobsController.createJob()">
+          <h3 class="text-primary">List Your Job</h3>
+          <div class="row p-3">
+            <div class="col-4">
+              <label class="form-label" for="company">Company</label>
+              <input class="form-control" type="text" minlength="5" id="company" name="company">
+            </div>
+            <div class="col-4">
+              <label class="form-label" for="title">Job Title</label>
+              <input class="form-control" type="text" id="title" name="title">
+            </div>
+            <div class="col-4">
+              <label class="form-label" for="start">Start Date</label>
+              <input class="form-control" type="date" id="start" name="start">
+            </div>
+            <label class="form-label" for="salary">Salary</label>
+            <input class="form-control" type="number" min="1" id="salary" name="salary">
+            <label class="form-label" for="rate">Rate</label>
+            <select name="rate" id="rate">
+              <option value="hourly">Hourly</option>
+              <option value="bi-weekly">Bi-Weekly</option>
+              <option value="monthly">Monthly</option>
+              <option value="annually">Annually</option>
+            </select>
+            <label class="form-label" for="img">Image</label>
+            <input class="form-control" type="text" id="img" name="img">
+            <label class="form-label" for="description">Description</label>
+            <textarea class="w-100 form-control" name="description" id="description" rows="5"></textarea>
+            <button type="submit" class="btn btn-primary w-100 p-2 mt-3 text-light">Submit</button>
+          </div>
+        </form>
+      </section>
+      <!--      -->
     </div>
   </main>
-  <footer class="container-fluid bg-dark text-light">
-    <div class="row text-center">
-      <div class="col">
-        <p><small>Made with 💖 by CodeWorks</small></p>
-      </div>
+  <footer class="bg-dark text-light">
+    <div class="text-center no-select">
+      <p><small>Made with 🎇 by Chris</small></p>
     </div>
   </footer>
 
