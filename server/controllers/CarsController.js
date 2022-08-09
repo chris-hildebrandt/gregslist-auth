@@ -4,7 +4,7 @@ import { carsService } from "../services/CarsService.js"
 export class CarsController extends BaseController {
 
   constructor() {
-    super('api/cars')
+    super('/api/cars')
     this.router
       .get('', this.getCars)
       .post('', this.createCar)

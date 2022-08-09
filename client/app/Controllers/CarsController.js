@@ -95,15 +95,23 @@ export class CarsController {
 
   async editCar(carId) {
     try {
+      // @ts-ignore
       window.event.preventDefault()
+      // @ts-ignore
       let form = window.event.target
       let carData = {
         id: carId,
+        // @ts-ignore
         make: form.make.value,
+        // @ts-ignore
         model: form.model.value,
+        // @ts-ignore
         year: form.year.value,
+        // @ts-ignore
         price: form.price.value,
+        // @ts-ignore
         imgUrl: form.imgUrl.value,
+        // @ts-ignore
         description: form.description.value,
       }
       await carsService.editCar(carData)
