@@ -8,7 +8,7 @@ export const CarSchema = new Schema(
     year: { type: Number, required: true, min: 1910, max: (new Date().getFullYear() + 2) },
     price: { type: Number, required: true, min: 100, max: 1000000, },
     img: { type: String, maxlength: 500, default: 'https://www.thiscatdoesnotexist.com' },
-    description: { type: String, maxlength: 800 },
+    description: { type: String, maxlength: 800 }
   },
   { timestamps: true, toJSON: { virtuals: true } }
 )

@@ -11,6 +11,7 @@ function _drawCars() {
   let template = ''
   let cars = ProxyState.cars
   cars.forEach(c => template += c.Template)
+  // @ts-ignore
   document.getElementById('listings').innerHTML = template
 }
 
@@ -31,17 +32,26 @@ export class CarsController {
 
     async createCar() {
       try {
+        // @ts-ignore
         window.event.preventDefault()
+        // @ts-ignore
         let form = window.event.target
         let newCar = {
+          // @ts-ignore
           make: form.make.value,
+          // @ts-ignore
           model: form.model.value,
+          // @ts-ignore
           year: form.year.value,
+          // @ts-ignore
           price: form.price.value,
+          // @ts-ignore
           imgUrl: form.imgUrl.value,
+          // @ts-ignore
           description: form.description.value,
         }
         await carsService.createCar(newCar)
+        // @ts-ignore
         form.reset()
       } catch (error) {
         console.log('[create car]', error);
@@ -50,12 +60,14 @@ export class CarsController {
     }
 
   drawForm() {
+    // @ts-ignore
     document.getElementById("form").innerHTML = getCarForm()
   }
 
   viewCars() {
     this.getCars()
     _drawCars()
+    // @ts-ignore
     document.getElementById('listing-form-button').innerHTML = `<button type="button" class="btn btn-primary rounded-pill" onclick="app.carsController.drawForm()">List Your Own Car!</button>`
     // let carFormElm = document.getElementById("form")
     // carFormElm.classList.remove("d-none")
@@ -77,6 +89,7 @@ export class CarsController {
   // NOT ASYNC
   adjustCar(carId) {
     let car = ProxyState.cars.find(c => c.id == carId)
+    // @ts-ignore
     document.getElementById('form').innerHTML = getCarForm(car)
   }
 

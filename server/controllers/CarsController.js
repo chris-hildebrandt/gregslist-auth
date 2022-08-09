@@ -1,16 +1,16 @@
 import BaseController from "../utils/BaseController.js"
+import { carsService } from "../services/CarsService.js"
 
 export class CarsController extends BaseController {
 
   constructor() {
-    super('/api/cars')
+    super('api/cars')
     this.router
       .get('', this.getCars)
       .post('', this.createCar)
       .get('/:carId', this.getCarById)
       .put('/:carId', this.editCar)
       .delete('/:carId', this.deleteCar)
-    this.router = undefined
   }
 
   async getCars(req, res, next) {
@@ -33,7 +33,7 @@ export class CarsController extends BaseController {
 
   async getCarById(req, res, next) {
     try {
-      let car = await carsService.getCarById(req.params.carId, req.body)
+      let car = await carsService.getCarById(req.params.carId)
       res.send(car)
     } catch (error) {
       next(error)
@@ -42,7 +42,8 @@ export class CarsController extends BaseController {
 
   async editCar(req, res, next) {
     try {
-      let car = 
+      let car = await carsService.editCar(req.params.carId, req.body)
+      res.send(car)
     } catch (error) {
       next(error)
     }
@@ -50,7 +51,8 @@ export class CarsController extends BaseController {
 
   async deleteCar(req, res, next) {
     try {
-
+      let car = await carsService.deleteCar(req.params.carId)
+      res.send(car)
     } catch (error) {
       next(error)
     }

@@ -35,17 +35,20 @@ export class HousesController {
 
   async createHouse() {
     try {
+      // @ts-ignore
       window.event.preventDefault()
+      // @ts-ignore
       let form = window.event.target
       let newHouse = {
-        bedrooms: = form.bedrooms.value
-        bathrooms: = form.bathrooms.value
-        year: = form.year.value
-        price: = form.price.value
-        imgUrl: = form.imgUrl.value
-        description: = form.description.value
+        bedrooms: form.bedrooms.value,
+        bathrooms: form.bathrooms.value,
+        year: form.year.value,
+        price: form.price.value,
+        imgUrl: form.imgUrl.value,
+        description: form.description.value,
       }
       await housesService.createHouse()
+      // @ts-ignore
       form.reset()
     } catch (error) {
       console.log('create house', error);
